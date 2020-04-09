@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+
+    <style>
+        table {
+            width: 280px;
+            height: 400px;
+            background-image: linear-gradient(to bottom,  #304d6f, #192a43);
+            border-spacing: 5px;
+            /* border-radius: 10px; */
+            text-align: center;
+            font-weight: bold;
+        }
+        td {
+            border-radius: 10px;
+        }
+        table .screen {
+            height: 90px;
+            font-size: 40px;
+            color: #fff;
+            text-align: right;
+        }
+        table .screen>td {
+            padding-right: 20px;
+        }
+        table .bigKey {
+            background-color: #192a43;
+            color: #fff;
+            font-size: 20px;
+        }
+        table .bigKey td{
+            padding-bottom: 5px;
+        }
+        table .smallKey {
+            background-image: linear-gradient(to bottom,  #304d6f, #233c58);
+            color: #fff;
+        }
+        table .smallKey td:last-child {
+            background-image: linear-gradient(to bottom,  #ff9a44, #ef9d43, #e75516);
+            padding-bottom: 5px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <table summary="계산기입니다.">
+        <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+        </colgroup>
+        <tr class="screen">
+            <td colspan="4">123+654</td>
+        </tr>
+        <tr class="bigKey">
+            <td colspan="2">BackSpace</td>
+            <td colspan="2">C</td>
+        </tr>
+        <tr class="smallKey">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>/</td>
+        </tr>
+        <tr class="smallKey">
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>x</td>
+        </tr>
+        <tr class="smallKey">
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>+</td>
+        </tr>
+        <tr class="smallKey">
+            <td>=</td>
+            <td>0</td>
+            <td>.</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+        
+        .first_sec {
+            background-color: #fff;
+        }
+
+        .second_sec {
+            background-color: #ededed;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Noto Serif KR', serif;
+            color: #333;
+        }
+
+        .require {
+            font-size: 16px;
+            color: red;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="first_sec">
+        <span class="title">회원정보</span>
+        <span class="title require">(필수)</span>
+
+        <form name="regist-form">
+            <div class="content">
+                <span>아이디</span>
+                <input type="text" name="id" placeholder="4자리 이상">
+                <input type="button" name="id" value="아이디중복확인">
+                <p>아이디 형식에 맞춰주세요(영문, 숫자 조합 4문자 이상)</p>
+            </div>
+            <div style="clear:both;"></div>
+        </form>
+
+    </div>
+    
+    <div class="second_sec">
+        <span class="title">부가정보</span>
+        <span class="title require">(선택)</span>
+
+    </div>
+
+</body>
+</html>

@@ -6,52 +6,217 @@
     <title>Registration</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
-        
-        .first_sec {
-            background-color: #fff;
+        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        .section {
+            /* background-color: #fff; */
+            width: 640px;
+            margin: 0 auto;
+            padding-top: 40px;
         }
 
-        .second_sec {
+        .section_bg {
             background-color: #ededed;
+            width: 100%;
         }
 
-        .title {
+        span.title {
             font-size: 20px;
             font-weight: bold;
-            font-family: 'Noto Serif KR', serif;
+            font-family: 'Noto Sans KR', sans-serif;
             color: #333;
         }
 
-        .require {
+        span.require {
             font-size: 16px;
             color: red;
+        }
+
+        table {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 12px;
+            border: 0;
+            margin: 20px 0;
+        }
+        input{
+            width: 200px;
+            height: 35px;
+            border: 1px solid #cacaca;
+            border-radius: 3px;
+            padding-left: 10px;
+        }
+        input[type="radio"] {
+            width: 18px;
+        }
+        input, input::placeholder {
+            color: #9b9b9b;
+            font-size: 12px;
+        }
+
+        td.col1 {
+            width: 149px;
+            padding: 19px 0 0 30px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #333;
+            line-height: 20px;
+            vertical-align: top;
+        }
+
+        td.col2 {
+            padding: 10px 30px 0 0px;
+        }
+        td.col2 p {
+            color: #707070;
+            margin-top: 5px;
         }
 
         
     </style>
 </head>
 <body>
-    <div class="first_sec">
+    <div class="section">
         <span class="title">회원정보</span>
         <span class="title require">(필수)</span>
+        
+        <form name="regist-form" action="#" method="post">
+            <table>
+                <tr class="member_id">
+                    <td class="col1">
+                        <span>아이디</span>
+                    </td>
+                    <td class="col2">
+                        <input type="text" name="id" minlength="4" placeholder="4자리 이상">
+                        <input type="button" name="id" value="아이디중복확인">
+                        <p>아이디 형식에 맞춰주세요(영문, 숫자 조합 4문자 이상)</p>
+                    </td>
+                </tr>
+                <tr class="member_pw">
+                            <td class="col1">
+                                <span>비밀번호</span>
+                            </td>
+                            <td class="col2">
+                                <input type="password" name="pw1">
+                                <p>8~20자리의 영문, 숫자 조합(영문, 숫자, 특수기호 조합을 권장합니다.)</p>
+                            </td>
+                </tr>
+                <tr class="member_pw_check">
+                            <td class="col1">
+                                <span>비밀번호확인</span>
+                            </td>
+                            <td class="col2">
+                                <input type="password" name="pw2">
+                            </td>
+                </tr>
+                <tr class="member_name">
+                            <td class="col1">
+                                <span>이름</span>
+                            </td>
+                            <td class="col2">
+                                <input type="text" name="name">
+                            </td>
+                </tr>
+                <tr class="member_gender">
+                    <td class="col1">
+                        <span>성별</span>
+                    </td>
+                    <td class="col2">
+                        <input type="radio" id="r1" name="gender" value="F">
+                        <label for="r1">여자</label>
+                        <input type="radio" id="r2" name="gender" value="M">
+                        <label for="r2">남자</label>
+                    </td>
+                </tr>
+                <tr class="member_birth">
+                    <td class="col1">
+                        <span>생년월일</span>
+                    </td>
+                    <td class="col2">
+                        <input type="date" name="birth">
+                        <input type="radio" name="birth-radio" value="Solar">양력
+                        <input type="radio" name="birth-radio" value="lunar">음력
+                    </td>
+                </tr>
+            </table>
 
-        <form name="regist-form">
             <div class="content">
-                <span>아이디</span>
-                <input type="text" name="id" placeholder="4자리 이상">
-                <input type="button" name="id" value="아이디중복확인">
-                <p>아이디 형식에 맞춰주세요(영문, 숫자 조합 4문자 이상)</p>
             </div>
             <div style="clear:both;"></div>
         </form>
 
     </div>
     
-    <div class="second_sec">
-        <span class="title">부가정보</span>
-        <span class="title require">(선택)</span>
+    <div class="section_bg">
+        <div class="section">
+            <span class="title">부가정보</span>
+            <span class="title require">(선택)</span>
 
+            <form name="regist-form" action="#" method="post">
+                <table>
+                    <tr class="member_id">
+                        <td class="col1">
+                            <span>아이디</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="id" minlength="4" placeholder="4자리 이상">
+                            <input type="button" name="id" value="아이디중복확인">
+                            <p>아이디 형식에 맞춰주세요(영문, 숫자 조합 4문자 이상)</p>
+                        </td>
+                    </tr>
+                    <tr class="member_pw">
+                                <td class="col1">
+                                    <span>비밀번호</span>
+                                </td>
+                                <td class="col2">
+                                    <input type="password" name="pw1">
+                                    <p>8~20자리의 영문, 숫자 조합(영문, 숫자, 특수기호 조합을 권장합니다.)</p>
+                                </td>
+                    </tr>
+                    <tr class="member_pw_check">
+                                <td class="col1">
+                                    <span>비밀번호확인</span>
+                                </td>
+                                <td class="col2">
+                                    <input type="password" name="pw2">
+                                </td>
+                    </tr>
+                    <tr class="member_name">
+                                <td class="col1">
+                                    <span>이름</span>
+                                </td>
+                                <td class="col2">
+                                    <input type="text" name="name">
+                                </td>
+                    </tr>
+                    <tr class="member_gender">
+                        <td class="col1">
+                            <span>성별</span>
+                        </td>
+                        <td class="col2">
+                            <input type="radio" id="r1" name="gender" value="F">
+                            <label for="r1">여자</label>
+                            <input type="radio" id="r2" name="gender" value="M">
+                            <label for="r2">남자</label>
+                        </td>
+                    </tr>
+                    <tr class="member_birth">
+                        <td class="col1">
+                            <span>생년월일</span>
+                        </td>
+                        <td class="col2">
+                            <input type="date" name="birth">
+                            <input type="radio" name="birth-radio" value="Solar">양력
+                            <input type="radio" name="birth-radio" value="lunar">음력
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="content">
+                </div>
+                <div style="clear:both;"></div>
+            </form>
+
+        </div>
     </div>
 
 </body>

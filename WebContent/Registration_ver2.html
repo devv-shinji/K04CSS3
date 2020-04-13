@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+        .title {
+            font-size: 23px;
+            font-weight: 500;
+            color: #333;
+        }
+        .require {
+            font-size: 16px;
+            color: red;
+        }
+        table {
+            margin: 20px 0;
+        }
+        .inner_section {
+            padding: 30px;
+            width: 650px;
+            margin: 0 auto;
+        }
+        .second_section {
+            background-color: #ededed;
+        }
+        td.col1 {
+            width: 150px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #333;
+            padding-left: 10px;
+        }
+        td.col2 {
+            padding: 15px 0 10px 0;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            height: 30px;
+            width: 300px;
+            border: 0;
+            border: 1px solid #cacaca;
+            border-radius: 4px;
+        }
+
+        input[type="email"] {
+            width: 140px;
+            padding-top: 3px;
+            padding-bottom: 0px;
+        }
+        
+        ::placeholder {
+            font-size: 12px;
+            color: #cacaca;
+            padding-left: 10px;
+        }
+        
+        .member_address input:nth-child(3),
+        .member_address input:nth-child(4) {
+            width: 147px;
+            margin-top: 3px;
+        }
+        
+        .member_phone input[type="text"], 
+        .member_phone2 input[type="text"] {
+            width: 90px;
+        }
+        .col2 span {
+            color: #909090;
+            font-size: 12px;
+            margin-top: 3px;
+            margin-bottom: 0;
+        }
+        .col2 p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        button, input[type="button"] {
+            margin-left: 3px;
+            background-color: #5f1d80;
+            height: 34px;
+            width: 140px;
+            color: white;
+            border: 0;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 300;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        button:last-child {
+            width: 400px;
+            height: 50px;
+            margin: 50px auto 30px auto;
+            border-radius: 4px;
+            display: block;
+            font-size: 16px;
+        }
+        label {
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        select {
+        width: 151px;
+        height: 35px;
+        border-radius: 4px;
+        border-color: #cacaca;
+        }
+
+        input[type="date"] {
+            height: 34px;
+            width: 140px;
+            border: 0;
+            border: 1px solid #cacaca;
+            border-radius: 4px;
+        }
+        input[type="date"]::-webkit-inner-spin-button {
+            height: 34px;
+        }
+
+        .checkbox_align td{
+            width: 145px;
+        }
+        .checkbox_align input[type="text"] {
+            width: 235px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- 회원정보 (필수) -->
+    <div class="first_section">
+        <div class="inner_section">
+            <span class="title">회원정보</span>
+            <span class="title require">(필수)</span>
+            
+            <form name="regist-form" action="#" method="post">
+                <table>
+                    <tr class="member_id">
+                        <td class="col1">
+                            <span>아이디</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="id" minlength="4" placeholder="4자리 이상">
+                            <input type="button" name="id" value="아이디중복확인">
+                            <p><span>아이디 형식에 맞춰주세요(영문, 숫자 조합 4문자 이상)</span></p>
+                        </td>
+                    </tr>
+                    <tr class="member_pw">
+                        <td class="col1">
+                            <span>비밀번호</span>
+                        </td>
+                        <td class="col2">
+                            <input type="password" name="pw1">
+                            <p><span>8~20자리의 영문, 숫자 조합(영문, 숫자, 특수기호 조합을 권장합니다.)</span></p>
+                        </td>
+                    </tr>
+                    <tr class="member_pw_check">
+                        <td class="col1">
+                            <span>비밀번호확인</span>
+                        </td>
+                        <td class="col2">
+                            <input type="password" name="pw2">
+                        </td>
+                    </tr>
+                    <tr class="member_name">
+                        <td class="col1">
+                            <span>이름</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="name">
+                        </td>
+                    </tr>
+                    <tr class="member_gender">
+                        <td class="col1">
+                            <span>성별</span>
+                        </td>
+                        <td class="col2">
+                            <input type="radio" id="r1" name="gender" value="F" checked>
+                            <label for="r1">여자</label>
+                            <input type="radio" id="r2" name="gender" value="M">
+                            <label for="r2">남자</label>
+                        </td>
+                    </tr>
+                    <tr class="member_birth">
+                        <td class="col1">
+                            <span>생년월일</span>
+                        </td>
+                        <td class="col2">
+                            <input type="date" name="birth">
+                            <input type="radio" id="r3" name="birth-radio" value="Solar" checked>
+                            <label for="r3">양력</label>
+                            <input type="radio" id="r4" name="birth-radio" value="lunar">
+                            <label for="r4">음력</label>
+                        </td>
+                    </tr>
+                    <tr class="member_email">
+                        <td class="col1">
+                            <span>이메일</span>
+                        </td>
+                        <td class="col2">
+                            <input type="email" name="email" id="email"><span>@</span>
+                            <input type="email" name="email" id="email">
+                            <select name="email">
+                                <option value="manual">직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="google.com">google.com</option>
+                            </select>
+                            <br>
+                            <span>이메일 수신동의 시, 신상품/할인혜택/이벤트 등의 정보를 받아보실 수 있습니다.<br>
+                            수신동의 거부 시에도 기본서비스는 발송됩니다.</span>
+                            <input type="radio" id="r5" name="mail-subscript" value="Y">
+                            <label for="r5">예</label>
+                            <input type="radio" id="r6" name="mail-subscript" value="N">
+                            <label for="r6">아니오</label>
+                        </td>
+                    </tr>
+                    <tr class="member_phone">
+                        <td class="col1">
+                            <span>휴대전화</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="phone"> - 
+                            <input type="text" name="phone"> - 
+                            <input type="text" name="phone">
+                            <br>
+                            <span>할인혜택과 이벤트 등의 소식 안내를 SMS로 받으실 수 있습니다.<br>
+                            수신동의 거부 시에도 기본서비스는 발송됩니다.</span>
+                            <input type="radio" id="r7" name="sms-subscript" value="Y">
+                            <label for="r7">예</label>
+                            <input type="radio" id="r8" name="sms-subscript" value="N">
+                            <label for="r8">아니오</label>
+                            </td>
+                    </tr>
+                </table>
+    
+                <!-- <div style="clear:both;"></div> -->
+            </form>
+        </div>
+    </div>
+
+    <!-- 부가정보(선택) -->
+    <div class="second_section">
+        <div class="inner_section">
+            <span class="title">부가정보</span>
+            <span class="title require">(선택)</span>
+
+            <form name="regist-form" action="#" method="post">
+                <table>
+                    <tr class="member_phone2">
+                        <td class="col1">
+                            <span>일반전화</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="phone2"> - 
+                            <input type="text" name="phone2"> - 
+                            <input type="text" name="phone2">
+                        </td>
+                    </tr>
+                    <tr class="member_address">
+                        <td class="col1">
+                            <span>주소</span>
+                        </td>
+                        <td class="col2">
+                            <input type="text" name="address">
+                            <input type="button" value="우편번호검색">
+                            <input type="text" name="address">
+                            <input type="text" name="address" placeholder="상세주소">
+                        </td>
+                    </tr>
+                    <tr class="member_job">
+                        <td class="col1">
+                            <span>직업</span>
+                        </td>
+                        <td class="col2">
+                            <select name="job">
+                                <option value="manual">선택</option>
+                                <option value="office">사무직</option>
+                                <option value="specialist">전문직</option>
+                                <option value="etc">기타</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="member_brand">
+                        <td class="col1">
+                            <span>관심 브랜드</span>
+                        </td>
+                        <td class="col2">
+                            <table class="checkbox_align">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb1">
+                                        <label for="cb1">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb2">
+                                        <label for="cb2">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb3">
+                                        <label for="cb3">한빛미디어</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb4">
+                                        <label for="cb4">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb5">
+                                        <label for="cb5">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb6">
+                                        <label for="cb6">한빛미디어</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb7">
+                                        <label for="cb7">한빛미디어</label>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                           
+                        </td>
+                    </tr>
+                    <tr class="member_category">
+                        <td class="col1">
+                            <span>관심 분야</span>
+                        </td>
+                        <td class="col2">
+                            <table class="checkbox_align">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb8">
+                                        <label for="cb8">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb9">
+                                        <label for="cb9">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb10">
+                                        <label for="cb10">한빛미디어</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb11">
+                                        <label for="cb11">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb12">
+                                        <label for="cb5">한빛미디어</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb13">
+                                        <label for="cb13">한빛미디어</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="brand" id="cb14">
+                                        <label for="cb14">한빛미디어</label>
+                                    </td>
+                                    <td colspan="2">
+                                        <input type="checkbox" name="brand" id="cb15">
+                                        <label for="cb15">기타:</label>
+                                        <input type="text" name="brand">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <div class="submit_btn">
+                    <button type="submit">회원가입하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
